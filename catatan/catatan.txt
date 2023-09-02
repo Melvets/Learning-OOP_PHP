@@ -1,0 +1,97 @@
+PART 1 ========================================================================================
+Object Oriented Programming
+    1. Definisi
+        A. OOP merupakan gaya pemrograman / programming style, atau ada yang menyebutnya paradigma pemrograman.
+        B. Prosedural Programing
+            - Instruksi dilakukan langkah demi langkah
+            - Memecah program menjadi bagian-bagian kecil
+            - Disebut prosedur, subroutine atau function
+            - Linear / Top-to Buttom / dari atas ke bawah
+            - Bahasa pemrograman yang menggunakan gaya prosedural: 
+                a) Fortran      e) C  
+                b) ALGOL        f) PHP
+                c) COBOL        g) Javascript
+                d) Pascal
+    2. Kelebihan Procedural Programing
+        A. To-the-point
+        B. Simplicity & kemudahan implementasi (untuk compiler & interpreter)
+        C. Mudah ditelusuri (Jika ada error maka pesan kesalahannya akan langsung mentarget area kesalahannya)
+        D. Membutuhkan lebih sedikit memory pada proses eksekusi (dibandingkan dengan OOP)
+    3. Karakteristik Object Oriented Programing
+        A. Menyusun semua kode program dan struktur data sebagai objek
+        B. Objek adalah unit dasar dari program
+        C. Objek menyimpan data dan perilaku
+        D. Objek bisa saling berinteraksi
+        E. Bahasa pemrograman yang menggunakan OOP:
+            - Java          - C++
+            - Ruby          - Javascript
+            - Python        - PHP5 / PHP versi 5 keatas
+    4. Kelebuhan Object Oriented Programing (OOP)
+        A. Representasi dunia nyata 
+        B. Enkapsulasi & Abstraksi data (Enkapsulasi: Memungkinkan data aman, tidak dapat diakses oleh bagian lain di program | Abstraksi Data: Mudah menyembunyikan kerumitan di program, karena akan di rubah menjadi objek)
+        C. Reusability (Dapat dengan mudah untuk menggunaulang bagian2 dari program)
+        D. Skalabilitas & Ekstensibilitas (Memudahkan programmer ketika nantinya program akan lebih besar)
+        E. Kemudahan pengelolaan
+        F. Kolaborasi
+        G. Digunakan oleh framework 
+    5. Procedural vs Object Oriented
+        Tergantung kebutuhan. Jika ingin membuat program yang simpel dapat menggunakan Procedural. Dan jika ingin membuat program dengan skala yang besar Object Oriented lebih cocok.
+    6. Konsep OOP pada PHP
+        A. Basic
+            - Class & Objek
+            - Property & Method
+            - Constructor
+            - Object Type
+            - Inheritance
+            - Visibility / Access Modifier
+            - Setter & Getter
+            - Static Method
+        B. Advanced
+            - Abstract & Interface
+            - Interceptor
+            - Object Cloning
+            - Callbacks & Closures
+            - Namespaces & Autoloading
+            - ...
+
+PART 2 ========================================================================================
+Class & Object
+    1. Definisi dan Cara Membuat
+        A. Class
+            - Definisi
+                a) Class adalah template / blueprint untuk membuat instance dari sebuah Object
+                b) Class mendefinisikan Object
+                c) Class menyimpan data dan perilaku yang disebuh Property dan Method
+            - Membuat Class
+                a) Diawali dengan menuliskan keyword class, diikuti nama dan dibatasi dengan {} untuk menyimpan property dan method    
+                b) Aturan penamaan class sama seperti variable
+                c) Biasanya penamaan diawali huruf besar atau camel casing
+                    Contoh: 
+                        -----------------------------------------------------
+                        class Coba {
+                            public $a; -----> -property-
+
+                            public function b () { -----> -method-
+
+                            }
+
+                        }
+                        -----------------------------------------------------
+        B. Object 
+            - Definisi
+                a) Instance yang didefinisikan oleh Class
+                b) Banyak object dapat dibuat menggunakan satu Class
+                c) Object dibuat dengan menggunakan keyword new
+            - Membuat Object
+                Contoh:
+                        -----------------------------------------------------
+                        class Coba {
+
+
+
+                        }
+
+                        -membuat object instance dari Class-
+                        $a = new Coba();
+                        $b = new Coba();
+                        -----------------------------------------------------
