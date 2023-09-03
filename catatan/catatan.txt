@@ -26,7 +26,7 @@ Object Oriented Programming
             - Java          - C++
             - Ruby          - Javascript
             - Python        - PHP5 / PHP versi 5 keatas
-    4. Kelebuhan Object Oriented Programing (OOP)
+    4. Kelebihan Object Oriented Programing (OOP)
         A. Representasi dunia nyata 
         B. Enkapsulasi & Abstraksi data (Enkapsulasi: Memungkinkan data aman, tidak dapat diakses oleh bagian lain di program | Abstraksi Data: Mudah menyembunyikan kerumitan di program, karena akan di rubah menjadi objek)
         C. Reusability (Dapat dengan mudah untuk menggunaulang bagian2 dari program)
@@ -95,3 +95,97 @@ Class & Object
                         $a = new Coba();
                         $b = new Coba();
                         -----------------------------------------------------
+
+PART 3 ========================================================================================
+Property & Method  
+    1. Definisi dan Penggunaannya
+        A. Property 
+            - Definisi
+                a) Merepresentasikan data / keadaan dari sebuah object
+                b) Variable yang ada di dalam object (member variable)
+                c) Sama seperti variable di dalam PHP, ditambah dengan keyword Visibility (public, private, protected) di depannya
+        B. Method
+            - Definisi
+                a) Merepresentasikan perilaku dari sebuah object
+                b) Function yang ada di dalam object
+                c) Sama seperti variable di dalam PHP, ditambah dengan keyword Visibility (public, private, protected) di depannya (opsional, default public)
+    2. Contoh kasus (mobil)
+        A. Property (data)
+            - nama                  - kecepatanMaksimal
+            - merk                  - jumlahPenumpang
+            - warna                 - dsb.
+        B. Method (perilaku)
+            - tambahKecepatan       - belokKiri
+            - kurangiKecepatan      - belokKanan
+            - gantiTransmisi        - dsb.
+        C. implementasi
+            --------------------------------------------------------------------
+            class Mobil {
+                public $nama,
+                public $merk,
+                public $warna,
+                public $kecepatanMaksimal,
+                public $jumlahPenumpang;
+
+                public function tambahKecepatan() {
+
+                }
+
+                public function kurangiKecepatan() {
+
+                }
+
+                public function gantiTransmisi() {
+
+                }
+            }
+            --------------------------------------------------------------------
+
+PART 4 ========================================================================================
+Constructor
+    A. Definisi
+        Sebuah method yang spesial atau method yang khusus ada di dalam Class. Disebut spesial karena Constructor adalah method yang otomatis dijalankan ketika sebuah Class di instansiasi / dibuat objectnya. 
+        Bahasa gampangnya membuat program lebih ringkas.
+    B. Contoh
+        --------------------------------------------------------------------
+        class Produk {
+            public $judul, 
+                $penulis,
+                $penerbit,
+                $harga;
+
+            // Menggunakan:
+            public function __construct( $judul = "kosong", $penulis = "kosong", $penerbit = "kosong", $harga = "kosong" ) {
+                $this->judul = $judul;
+                $this->penulis = $penulis;
+                $this->penerbit = $penerbit;
+                $this->harga = $harga;
+            }
+
+            public function getLabel() {
+                return "$this->penulis, $this->penerbit";
+            }
+        }    
+
+        // Construcktor-nya
+        $produk1 = new Produk("Naruto", "Masashi Kishimoto", "Shonen Jump", 30000);
+        $produk2 = new Produk("Guru Aini", "Andrea Hirata", "Bentang Pustaka", 100000);
+        $produk3 = new Produk();
+
+        echo "Komik : " . $produk1->getLabel();
+        echo "<br>";
+        echo "Novel : " . $produk2->getLabel();
+        echo "<br>";
+        echo "Novel : " . $produk3->getLabel();
+        --------------------------------------------------------------------
+
+PART 5 ========================================================================================
+Object Type
+    1. Menghubungkan method dengan class lain dan memasukkan property dalam suatu method
+
+PART 6 ========================================================================================    
+Inheritance
+    1. Definisizzzzzzzzz
+        A. Menciptakan hierarki antar kelas (Parent & Child)
+        B. Child Class, mewarisi semua properti dan method dari parent-nya (yang visible) 
+        C. Child Class, memperluas (extends) fungsionalitas dari parent-nya 
