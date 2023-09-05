@@ -185,7 +185,34 @@ Object Type
 
 PART 6 ========================================================================================    
 Inheritance
-    1. Definisizzzzzzzzz
+    1. Definisi
         A. Menciptakan hierarki antar kelas (Parent & Child)
         B. Child Class, mewarisi semua properti dan method dari parent-nya (yang visible) 
         C. Child Class, memperluas (extends) fungsionalitas dari parent-nya 
+    2. implementasi    
+        --------------------------------------------------------------------
+        class Mobil {
+            public $nama, $merk, $warna,
+                   $kecepatanMaksimal,
+                   $jumlahPenumpang;
+
+            public function tambahKecepatan() {
+                return "Kecepatan bertambah!";
+            }       
+        }
+
+        // Child
+        class MobilSport extends Mobil {
+            public $turbo = false;
+
+            public function jalankanTurbo(){
+                $this->turbo = true;
+                return "Turbo dijalankan";
+            }
+        }
+
+        $mobil = new MobilSport();
+        echo $mobil->tambahKecepatan();
+        echo "<br>";
+        echo $mobil->jalankanTurbo();
+        --------------------------------------------------------------------
