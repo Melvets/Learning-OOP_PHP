@@ -183,7 +183,7 @@ PART 5 =========================================================================
 Object Type
     1. Menghubungkan method dengan class lain dan memasukkan property dalam suatu method
 
-PART 6 ========================================================================================    
+PART 6 ========================================================================================   
 Inheritance
     1. Definisi
         A. Menciptakan hierarki antar kelas (Parent & Child)
@@ -216,3 +216,19 @@ Inheritance
         echo "<br>";
         echo $mobil->jalankanTurbo();
         --------------------------------------------------------------------
+
+PART 7 ========================================================================================   
+Overriding
+    1. Definisi
+        Overriding adalah sebuah istilah dimana bisa membuat method di kelas child yang memiliki nama yang sama dengan nama parentnya istilahnya Overriding mengambil alih/menimpa method parentnya. 
+    2. Contohnya
+        parent::getInfoProduk()
+
+        Contoh Overriding ke-2
+        public function __construct( $judul = "kosong", $penulis = "kosong", $penerbit = "kosong", $harga = "kosong", $jam = "kosong" ) {
+    
+        parent::__construct( $judul, $penulis, $penerbit, $harga );
+
+        $this->jam = $jam;
+    
+    }
