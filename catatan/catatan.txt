@@ -305,3 +305,32 @@ Visibility (Access Modifier)
              echo $panggil->getPrivate(); //bisa
              --------------------------------------------------------------------
 
+PART 9 ========================================================================================
+Setter dan Getter (Accessor Method)
+    1. Definisi
+        Setter dan Getter adalah method yang bisa membaca atau melihat isi property ataupun mengubah isinya. Method untuk mengeset dan method untuk mengeget.
+            --------------------------------------------------------------------
+            public function setPenulis ( $penulis ) {
+                $this->penulis = $penulis;
+            }
+
+            public function getPenulis() {
+                return $this->penulis;
+            }
+
+            public function setPenerbit ( $penerbit ) {
+                $this->penerbit = $penerbit;
+            }
+
+            public function getPenerbit() {
+                return $this->penerbit;
+            }
+
+            //Memanggil
+            // setter dan getter
+            $produk1->setHarga(20000);
+            echo $produk1->getJudul();
+            echo $produk1->getPenulis();
+            echo $produk1->getPenerbit();
+            echo $produk1->getHarga();
+            --------------------------------------------------------------------
