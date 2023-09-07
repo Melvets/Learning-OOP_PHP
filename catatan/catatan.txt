@@ -232,3 +232,76 @@ Overriding
         $this->jam = $jam;
     
     }
+
+PART 8 ========================================================================================   
+Visibility (Access Modifier)
+    1. Definisi
+        A. Konsep yang digunakan untuk mengatur akses dari property dan method pada sebuah objek
+        B. Ada 3 keyword Visibility: public, protected, dan private
+            - public, dapat digunakan di mana saja, bahkan di luar kelas
+            - protected, hanya dapat digunakan di dalam sebuah kelas beserta turunannya (Jika punya kelas yang ada Inheritance maka kedua kelas tersebut bisa menggunakan properti atau method dengan menggunakan Visibility Protected)
+            - private, hanya dapat digunakan di dalam sebuah kelas tertentu saja
+    2. Fungsi Visibility
+        A. Hanya memperlihatkan aspek dari class yang dibutuhkan oleh 'client'
+        B. Menentukan kebutuhan yang jelas untuk object
+        C. Memberikan kendali pada kode untuk menghindari 'bug'
+    3. Contoh implementasi Visibility:
+        A. Publik
+            Dapat digunakan / dipanggil dimana saja
+             --------------------------------------------------------------------
+             class Coba {
+                public $coba1;
+             }
+
+             $panggil = new Coba();
+             --------------------------------------------------------------------
+
+        B. Protected
+            Dapat digunakan oleh class itu sendiri dan turunannya / childnya
+             --------------------------------------------------------------------
+             class Coba {
+                public $coba1;
+                protected $anakcoba1;
+             }       
+
+             class Anak1 extends Coba {
+                public function getProtected() {
+                    return $this->$anakcoba1 = 30; //bisa
+                }
+             }
+
+             $panggil = new Anak1(); 
+
+             echo $panggil->anakcoba1; //tidak bisa
+             echo $panggil->getProtected(); //bisa
+             --------------------------------------------------------------------
+
+        C. Private
+            Dapat digunakan pada class itu sendiri
+             --------------------------------------------------------------------
+             class Coba {
+                public $coba1;
+                protected $anakcoba1;
+                private $anakcoba2;
+
+                public function getPrivate() {
+                    return $this->$anakcoba2 = 30; //bisa
+                }                
+             }       
+
+             class Anak1 extends Coba {
+                public function getProtected() {
+                    return $this->$anakcoba1 = 30; // bisa
+                }
+                public function getPrivategbs() {
+                    return $this->anakcoba2 = 30; //tidak bisa
+                }
+             }
+
+             $panggil = new Anak1(); 
+
+             echo $panggil->anakcoba1; //tidak bisa
+             echo $panggil->getProtected(); //bisa
+             echo $panggil->getPrivate(); //bisa
+             --------------------------------------------------------------------
+
