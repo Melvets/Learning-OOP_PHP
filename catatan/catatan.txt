@@ -456,3 +456,72 @@ Static Keyword
         C. Membuat kode seolah-olah menjadi 'Procedural' karena bisa dipanggil tanpa class instansiasi
         D. Biasa' digunakan untuk membuat fungsi bantuan / helper
         E. Atau digunakan di class-class utility pada Framework
+
+PART 11 ========================================================================================
+Constant
+    1. Definisi
+        A. Constant adalah sebuah identifier untuk menyimpan nilai. 
+        B. Bedanya Constant dengan Variable adalah nilainya tidak dapat berubah ketika sudah diset di dalam program. 
+        C. Contohnya ketika mempunyai constanta bernilai 1 maka sampai akhir program nilanya akan tetap 1. 
+        D. Biasakan ketika membuat constanta gunakan huruf besar semua
+    2. 2 cara membuat Constanta:
+        A. define()
+            Ketika menggunakan konsep OOP, define() tidak dapat disimpan di sebuah kelas. define() harus disimpan diluar sebagai konstanta global
+
+            define(name, value)
+
+            Contoh 1:
+                --------------------------------------------------------------------
+                // Definisikan
+                define('NAMA', 'Camela Devs');
+
+                // Memanggil
+                echo NAMA;
+                --------------------------------------------------------------------
+
+            Contoh 2:
+                --------------------------------------------------------------------
+                // define() tidak dapat dimasukkan ke dalam class
+
+                class Coba {
+                    define('NAMA', 'Camela Devs');
+                }
+                ====================================================================
+                Parse error: syntax error, unexpected identifier "define", expecting "function" or "const" in D:\laragon\www\oop_php\latihan\10_constant\define().php on line 4
+                --------------------------------------------------------------------
+
+        B. const
+            Ketika menggunakan konsep OOP, const dapat dimasukkan disebuah kelas
+
+            const <nama constanta> = <isi>;
+
+            Contoh 1:
+                --------------------------------------------------------------------
+                // Definisikan
+                const UMUR = 18;
+
+                // Memanggil
+                echo UMUR;
+                --------------------------------------------------------------------
+
+            Contoh 2:
+                --------------------------------------------------------------------
+                class Coba {
+                    const NAMA = 'Camela Devs';
+                }
+
+                // Memanggil
+                echo Coba::NAMA;
+                --------------------------------------------------------------------
+
+    3. Magic Constant
+        A. Macam-macam Magic Constant
+            - __LINE__          : Menampilkan baris Constant ditulis
+            - __FILE__          : Menampilkan alamat file Constant
+            - __DIR__           : Menampilkan direktori yang bersangkutan
+            - __FUNCTION__      : Menampilkan sedang di function mana
+            - __CLASS__         : Menampilkan sedang di class mana
+            - __TRAIT__         : Menampilkan nama trait dan namespaces
+            - __METHOD__        : Menampilkan nama method dan class yang bersangkutan
+            - __NAMESPACE__     : Menampilkan nama namespaces
+
