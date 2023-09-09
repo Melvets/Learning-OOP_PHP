@@ -334,3 +334,125 @@ Setter dan Getter (Accessor Method)
             echo $produk1->getPenerbit();
             echo $produk1->getHarga();
             --------------------------------------------------------------------
+
+PART 10 ========================================================================================
+Static Keyword
+    1. Definisi
+        Static keyword dapat memanggil properti dan method tanpa meng-instansiasi class terlebih dahulu. 
+    2. Cara penggunaannya
+
+        <class>::$<property>;
+        <class>::<method>();
+
+        Contoh:
+            --------------------------------------------------------------------
+            class ContohStatic {
+                //property 
+                public static $angka = 1;
+
+                //method
+                public static function halo() {
+                    return "Halo.";
+                }
+            }
+
+            //pemanggilan property
+            echo ContohStatic::$angka;
+
+            //pemanggilan method
+            echo ContohStatic::halo();
+            --------------------------------------------------------------------
+
+            Untuk menampilkan "Halo1" tanpa/menggunakan instansiasi menggunakan "$this->angka;" tetapi jika menggunakan static menggunakan "self::$angka;"
+
+            --------------------------------------------------------------------
+            class ContohStatic {
+                //property 
+                public static $angka = 1;
+
+                //method
+                public static function halo() {
+                    return "Halo " . self::$angka++ . " kali.";
+                }
+            }
+
+            echo ContohStatic::$angka;
+            echo ContohStatic::halo();
+            echo ContohStatic::halo();
+            ====================================================================
+            hasil:
+            1
+            Halo 1 kali.
+            Halo 2 kali.
+            --------------------------------------------------------------------
+
+    3. Digunakan untuk apa saja
+        A. Member yang terikat dengan class, bukan dengan object
+        B. Nilai static akan selalu tetap meskipun object di-instansiasi berulang kali
+            contoh tanpa static: 
+                --------------------------------------------------------------------
+                class contoh {
+                    public $angka = 1;
+
+                    public function halo() {
+                        return "Halo " . $this->angka++ . " kali <br>";
+                    }
+                }
+
+                $obj = new Contoh;
+                echo $obj->halo();
+                echo $obj->halo();
+                echo $obj->halo();
+
+                echo "<hr>";
+
+                $obj2 = new Contoh;
+                echo $obj2->halo();
+                echo $obj2->halo();
+                echo $obj2->halo();
+                ====================================================================
+                hasil:
+                -- Halo 1 kali
+                -- Halo 2 kali
+                -- Halo 3 kali
+
+                -- Halo 1 kali
+                -- Halo 2 kali
+                -- Halo 3 kali
+                --------------------------------------------------------------------
+                
+            contoh property menggunakan static: 
+                --------------------------------------------------------------------
+                class contoh {
+                    public static $angka = 1;
+
+                    public function halo() {
+                        return "Halo " . self::$angka++ . " kali <br>";
+                    }
+                }
+
+                $obj = new Contoh;
+                echo $obj->halo();
+                echo $obj->halo();
+                echo $obj->halo();
+
+                echo "<hr>";
+
+                $obj2 = new Contoh;
+                echo $obj2->halo();
+                echo $obj2->halo();
+                echo $obj2->halo();
+                ====================================================================
+                hasil:
+                -- Halo 1 kali
+                -- Halo 2 kali
+                -- Halo 3 kali
+
+                -- Halo 4 kali
+                -- Halo 5 kali
+                -- Halo 6 kali
+                --------------------------------------------------------------------
+
+        C. Membuat kode seolah-olah menjadi 'Procedural' karena bisa dipanggil tanpa class instansiasi
+        D. Biasa' digunakan untuk membuat fungsi bantuan / helper
+        E. Atau digunakan di class-class utility pada Framework
