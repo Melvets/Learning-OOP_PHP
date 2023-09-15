@@ -616,3 +616,52 @@ PART 14 ========================================================================
 Autoloading
     A. Definisi
         Autoloading adalah sesuatu proses pemanggilan class yang disimpan dalam bentuk file tanpa harus menggunakan require. Karena biasanya dalam konsep OOP satu kelas ditulis dalam satu file
+
+PART 15 ========================================================================================
+Namespaces / Encapsulation
+    A. Definisi
+        Namespaces adalah sebuah cara untuk mengelompokkan program ke dalam sebuah package tersendiri
+    B. Alasan menggunakan Namespaces / Encapsulation
+        Karena PHP tidak mengizinkan untuk memiliki 2 class dengan nama yang sama. Ketika membuat class dengan nama yang sama maka program masih bisa mengidentifikasi bahwa class ini dan itu beda
+    C. Cara penggunaannya
+        App\Produk\User;
+        --------------------------------------------------------------------
+        <?php namespaces App\Produk;
+
+        class User {
+            public function __construct() {
+                echo "Ini adalah class " . __CLASS__;
+            }
+        }
+        --------------------------------------------------------------------
+
+        App\Service\User;
+        --------------------------------------------------------------------
+        <?php namespaces App\Service;
+
+        class User {
+            public function __construct() {
+                echo "Ini adalah class " . __CLASS__;
+            }
+        }
+        --------------------------------------------------------------------
+
+        index ---> memanggil
+        --------------------------------------------------------------------
+        <?php
+
+        new App\Produk\User();
+        new App\Service\User();
+        --------------------------------------------------------------------
+
+    D. Aturan Namespaces
+        --------------------------------------------------------------------
+        namespaces Vendor\Namespace\SubNamespace;
+        --------------------------------------------------------------------
+
+    E. Menggunakan alias (as) untuk Namespace
+        use App\Produk\User as ServiceUser;
+        use App\Service\User as ProdukUser;
+
+        new ServiceUser();
+        new ProdukUser();
