@@ -611,3 +611,8 @@ Interface
         - Dan interface hanya menyediakan template yang tidak ada isinya lalu kelas turunannya wajib menggunakan method dari kelas parentnya. 
         - Tidak masalah jika childnya menggunakan lebih dari method parentnya asalkan minimal memenuhi method kelas parentnya
         - Satu kelas turunannya boleh memiliki lebih dari satu interface seperti pada class Jeruk
+
+PART 14 ========================================================================================
+Autoloading
+    A. Definisi
+        Autoloading adalah sesuatu proses pemanggilan class yang disimpan dalam bentuk file tanpa harus menggunakan require. Karena biasanya dalam konsep OOP satu kelas ditulis dalam satu file
