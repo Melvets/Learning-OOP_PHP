@@ -558,4 +558,56 @@ Abstract Class
         D. Sentralisasi logic
         E. Mempermudah pengerjaan tim
         
-PART 13 ========================================================================================        
+PART 13 ========================================================================================
+Interface
+    1. Definisi (1)
+        A. Kelas Abstract yang sama sekali tidak memiliki implementasi
+        B. Murni merupakan template untuk kelas turunannya
+        C. Tidak boleh memiliki property, hanya deklarasi method saja
+        D. Semua method harus dideklarasikan dengan Visibility public
+        E. Boleh mendeklarasikan __construct
+        F. Satu kelas turunannya boleh mengimplementasikan banyak interface
+       Definisi (2)
+        A. Dengan menggunakan type-hinting(Object dapat dijadikan parameter) dapat melakukan 'Dependency Injection' 
+        B. Pada akhirnya akan mencapai Polymorphism
+    2. Cara penggunaannya
+        --------------------------------------------------------------------
+        interface Buah {
+            public function makan();
+            public function setWarna($warna);
+        }
+
+        interface Benda {
+            public function setUkuran ($ukuran);
+        }
+
+        class Apel implements Buah {
+            protected $warna;
+            public function makan() {
+                // kunyah
+                // sampai bagian tengah
+            }
+            public function setWarna($warna) {
+                $this->warna = $warna;
+            }
+        }
+        class Jeruk implements Buah, Benda {
+            protected $warna;
+            protected $ukuran;
+            public function makan() {
+                // kupas
+                // kunyah
+            }
+            public function setWarna($warna) {
+                $this->warna = $warna;
+            }
+            public function setUkuran($ukuran) {
+                $this->ukuran = $ukuran;
+            }
+        }
+        --------------------------------------------------------------------
+        nb: 
+        - menggunakan interface mewajibkan class turunannya menggunakan implements. 
+        - Dan interface hanya menyediakan template yang tidak ada isinya lalu kelas turunannya wajib menggunakan method dari kelas parentnya. 
+        - Tidak masalah jika childnya menggunakan lebih dari method parentnya asalkan minimal memenuhi method kelas parentnya
+        - Satu kelas turunannya boleh memiliki lebih dari satu interface seperti pada class Jeruk
