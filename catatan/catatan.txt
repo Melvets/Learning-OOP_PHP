@@ -525,3 +525,37 @@ Constant
             - __METHOD__        : Menampilkan nama method dan class yang bersangkutan
             - __NAMESPACE__     : Menampilkan nama namespaces
 
+PART 12 ========================================================================================
+Abstract Class
+    1. Definisi
+        A. Sebuah kelas yang tidak dapat di-instansiasi
+        B. Kelas 'abstrak' karena tidak dapat di-instansiasi. Yang menjadi kelas sesungguhnya adalah kelas turunannya
+        C. mendefinisikan interface untuk kela lain yang menjadi turunannya
+        D. Berperan sebagai 'kerangka dasar' untuk kelas turunannya
+        E. Memiliki minimal 1 method abstrak dan nanti method ini akan dianggap menjadi interface / kerangka dari method yang dibuat di kelas-kelas turunannya
+        F. Digunakan dalam 'pewarisan' / Inheritance untuk 'memaksakan' implementasi method abstrak yang sama untuk semua kelas turunannya
+    2. Contoh kasus
+            --------------------------------------------------------------------
+            abstract class Buah {
+                private $warna;
+
+                abstract public function makan(); //kerangka dasar
+
+                public function setWarna($warna) {
+                    $this->warna = $warna;
+                }
+            }
+            --------------------------------------------------------------------
+            method abstract hanya interfacenya saja. Tidak ada isinya. implementasinya ada di kelas turunan. ketika class / method abstract dipanggil maka error.
+    3. Abstract Class (2)
+        A. Semua kelas turunan, harus mengimplementasikan method abstrak yang ada di kelas abstraknya
+        B. Kelas abstrak boleh memiliki property / method reguler (biasa)
+        C. Kelas abstrak boleh memiliki property / static method
+    4. Kenapa menggunakan kelas abstrak
+        A. Merepresentasikan ide atau konsep dasar
+        B. "Composition over Inheritance" sebaiknya menggunakan komposisi daripada menggunakan pewarisan begitu saja
+        C. Salah satu cara menerapkan Polimorphism
+        D. Sentralisasi logic
+        E. Mempermudah pengerjaan tim
+        
+PART 13 ========================================================================================        
